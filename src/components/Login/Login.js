@@ -88,8 +88,11 @@ const Login = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     props.onLogin(emailState.value, passwordState.value);
-    emailState("");
-    passwordState("");
+    dispatchEmail({ type: "USER_INPUT", val: "" });
+    dispatchPassword({ type: "USER_INPUT", val: "" });
+
+    // emailState("");
+    // passwordState("");
   };
 
   return (
